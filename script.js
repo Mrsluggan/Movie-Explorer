@@ -15,6 +15,16 @@ function searchMovie(movieName){
     .then(res => res.json())
     .then(data => {
         printMovies(data);
+        console.log(data)
+        let totalPages = document.createElement("div");
+        for (i=1; i<=data.total_pages; i++) {
+            let button = document.createElement("button");
+            button.textContent = i;
+            totalPages.appendChild(button);
+            console.log("funkar");
+
+        }
+        movieList.appendChild(totalPages);
     })
 
 }
@@ -22,6 +32,7 @@ function searchMovie(movieName){
 
 testknapp.addEventListener("click", () =>{
     movieList.innerHTML = "";
+    movieInfo.innerHTML = "";
     let searchFieldValue = searchField.value;
 
     searchMovie(searchFieldValue);
@@ -40,6 +51,7 @@ function printMovies(movies) {
         movieList.appendChild(li);
 
     })
+
 }
 
 function printMovieInfo(movie) {
