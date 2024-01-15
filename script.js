@@ -27,10 +27,11 @@ function searchMovie(movieName){
         movieList.appendChild(totalPages);
     })
 
+
 }
 
 
-testknapp.addEventListener("click", () =>{
+testknapp.addEventListener("click", () => {
     movieList.innerHTML = "";
     movieInfo.innerHTML = "";
     let searchFieldValue = searchField.value;
@@ -42,7 +43,7 @@ function printMovies(movies) {
 
     movies.results.forEach(movie => {
         let li = document.createElement("li");
-        li.innerText = movie.original_title;
+        li.innerText = movie.original_title + " (" + movie.release_date + ")";
         li.addEventListener("click", () => {
 
             printMovieInfo(movie);
@@ -64,13 +65,13 @@ function printMovieInfo(movie) {
 
     let movieHeadline = document.createElement("h2")
     movieImg.src = "http://image.tmdb.org/t/p/original/" + movie.poster_path;
-    movieImg.setAttribute("Style","width: 200px;")
+    movieImg.setAttribute("Style", "width: 200px;")
 
-    
+
     movieHeadline.innerText = movie.original_title;
     movieText.innerText = movie.overview;
 
-    movieDiv.append(movieHeadline, movieText,movieImg);
+    movieDiv.append(movieHeadline, movieText, movieImg);
     movieInfo.appendChild(movieDiv);
 
 }
