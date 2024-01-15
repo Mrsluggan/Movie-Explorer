@@ -4,7 +4,7 @@ let movieInfo = document.getElementById("movieInfo");
 let testknapp = document.getElementById("test");
 let searchField = document.getElementById("searchField");
 
-fetch("https://api.themoviedb.org/3/search/movie?query=Batman&include_adult=false&language=en-US&page=2&api_key=88d6f906b386ac47c004701d8f545df8")
+fetch("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&&api_key=88d6f906b386ac47c004701d8f545df8")
     .then(res => res.json())
     .then(data => {
         printMovies(data);
