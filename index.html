@@ -15,19 +15,24 @@
         }
 
         #movie {
-            display: flex;
+            display: grid;
+            grid-template-areas:
+                "movieList movieinfo"
+                "buttonDiv buttonDiv";
         }
 
-        #movieList{
-            float: right;
+        #movieList {
         }
+
+        #buttonDiv {
+            margin-left: 5%;
+        }
+
         #movieInfo {
-            margin-left: 8%;
 
-            max-width: 600px;
         }
 
-        li{
+        li {
             margin-bottom: 2%;
             list-style: none;
         }
@@ -42,8 +47,8 @@
     </a>
     <br><br>
     Sök film<br>
-    <input type="text" id="searchField">
-    <button id="test">sök</button>
+    <input type="text" id="searchField" required>
+    <button id="test">sök</button required>
     <h1>Movies</h1>
 
     <div id="movie">
@@ -51,6 +56,8 @@
         <div id="movieInfo"></div>
 
     </div>
+    <h4>Pages: </h4>
+    <div id="buttonDiv"></div>
 
 </body>
 
